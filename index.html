@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC Bedrock Resource Pack</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+        }
+        .button:hover {
+            background: #45a049;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .overlay-content {
+            background: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            text-align: left;
+        }
+        .close-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function openChangelog() {
+            document.getElementById("changelogOverlay").style.display = "flex";
+        }
+        function closeChangelog() {
+            document.getElementById("changelogOverlay").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>MC Bedrock Resource Pack</h1>
+        <p>Enhance your Minecraft Bedrock experience with our custom resource pack.</p>
+        
+        <button class="button" onclick="openChangelog()">View Changelog</button>
+        <br>
+        <a href="resource-pack.zip" download class="button">Download Now</a>
+    </div>
+    
+    <div id="changelogOverlay" class="overlay">
+        <div class="overlay-content">
+            <h2>Changelog</h2>
+            <p><strong>Version 1.0:</strong></p>
+            <ul>
+                <li>Initial release</li>
+                <li>New textures for blocks and items</li>
+                <li>Optimized performance</li>
+            </ul>
+            <button class="close-btn" onclick="closeChangelog()">Close</button>
+        </div>
+    </div>
+</body>
+</html>
 
