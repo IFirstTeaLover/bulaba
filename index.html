@@ -51,6 +51,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            max-width: 500px;
             text-align: left;
         }
         .close-btn {
@@ -60,44 +61,45 @@
             padding: 5px 10px;
             cursor: pointer;
             border-radius: 5px;
+            display: block;
             margin-top: 10px;
         }
     </style>
     <script>
         function openChangelog() {
-            document.getElementById("changelogOverlay").style.display = "flex";
+            document.getElementById('changelog-overlay').style.display = "flex";
         }
         function closeChangelog() {
-            document.getElementById("changelogOverlay").style.display = "none";
+            document.getElementById('changelog-overlay').style.display = "none";
+        }
+        function toggleVersion(id) {
+            var details = document.getElementById(id);
+            details.style.display = details.style.display === "none" ? "block" : "none";
         }
     </script>
 </head>
 <body>
     <div class="container">
         <h1>Bulaba for bedrock</h1>
-        <p>Resource pack made by BulbaSprout(with love)</p>
+        
+        <a href="Bulaba.mcpack" download class="button">Download Now</a>
         
         <button class="button" onclick="openChangelog()">View Changelog</button>
-        <br>
-        <a href="https://ifirsttealover.github.io/bulaba/Bulaba.mcpack" download class="button">Download Now</a>
     </div>
-    
-    <div id="changelogOverlay" class="overlay">
+
+    <div id="changelog-overlay" class="overlay">
         <div class="overlay-content">
             <h2>Changelog</h2>
-            <p><strong>Version 0.1:</strong></p>
-            <ul>
-                <li>Made website</li>
-                <li>New textures for items</li>
-                <li>Removed apple and golden apple textures</li><br>
-            <p><strong>Version 0.1.5:</strong></p>
-                <li>Added custom iron and gold armor textures</li>
-                <li>Updated totem texture</li>
-                <li>Changed texture for iron armor model</li><br>
-            </ul>
+            <button class="button" onclick="toggleVersion('changelog-1-0')">Version 0.1.5</button>
+            <div id="changelog-1-0" style="display: none;">
+                <ul>
+                    <li>Added custom iron and gold armor textures</li>
+                    <li>Updated totem texture</li>
+                    <li>Changed texture for iron armor model</li>
+                </ul>
+            </div>
             <button class="close-btn" onclick="closeChangelog()">Close</button>
         </div>
     </div>
 </body>
 </html>
-
